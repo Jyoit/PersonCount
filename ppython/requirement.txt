@@ -1,0 +1,7 @@
+opencv-python==4.10.0.84
+pygame==2.5.2
+pyttsx3==2.90
+gspread==6.1.2
+google-auth==2.35.0
+ultralytics==8.3.15
+requests==2.32.3
