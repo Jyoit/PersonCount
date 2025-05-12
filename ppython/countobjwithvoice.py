@@ -172,7 +172,7 @@ def real_time_detection():
     voice_announcer = VoiceAnnouncer()
     # attendance_logger = AttendanceLogger("studen-456608-e03a2e77c66b.json", "Student_Attendance")
     attendance_logger = AttendanceLogger("http://localhost:5000/api/log")
-    student_tracker = StudentTracker("yolov8m.pt")
+    student_tracker = StudentTracker("yolov8n.pt")
     
     # Start voice thread
     voice_thread = threading.Thread(target=voice_announcer.run, daemon=True)
