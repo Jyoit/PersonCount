@@ -3,12 +3,11 @@ from flask_cors import CORS
 import subprocess
 
 app = Flask(__name__)
-CORS(app)  # This allows requests from React
+CORS(app)
 
 @app.route('/run-python-script', methods=['GET'])
 def run_script():
     try:
-        # Make sure countobjwithvoice.py is in the same folder
         subprocess.Popen(['python', 'countobjwithvoice.py'])
         return jsonify({'success': True})
     except Exception as e:
