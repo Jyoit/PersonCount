@@ -45,7 +45,7 @@ function VideoFeed() {
         {/* Hero Card - Now with minimum height */}
         <div className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden mb-12 p-8 text-center min-h-[300px] flex flex-col justify-center">
           <h2 className="text-2xl font-bold mb-4 text-teal-300">
-            Intelligent People Counting
+            Real-Time People Counting
           </h2>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Harnessing YOLOv8 and OpenCV to deliver 95% accurate real-time occupancy data for classrooms, offices, and retail spaces.
