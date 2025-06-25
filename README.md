@@ -28,7 +28,7 @@ The system operates as a set of interconnected services running locally on a sin
 **Architecture Overview**:  
 `Camera Input → YOLOv8 AI Module (Python) → Flask Bridge → Node.js API → MongoDB → React.js Frontend`
 
-> [Insert system diagram image here]
+
 
 ---
 
