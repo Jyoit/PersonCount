@@ -68,7 +68,7 @@ Edit
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Jyoit/PersonCount.git
 cd your-repo-name
 MongoDB Local Setup
 Install MongoDB from the official site
