@@ -60,7 +60,7 @@ function VideoFeed() {
                   : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-purple-500/20'
               }`}
             >
-              ▶️ {isLoading ? 'Initializing...' : 'Launch Detection'}
+              {isLoading ? 'Initializing...' : 'Launch Detection'}
             </button>
           </div>
         </div>
