@@ -38,7 +38,8 @@ Webcam (for local detection)
 ### Clone the Repository
 
 git clone https://github.com/Jyoit/PersonCount
-cd your-repo-name
+
+cd PersonCount
 
 ### MongoDB Setup
 
