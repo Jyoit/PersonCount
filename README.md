@@ -1,183 +1,143 @@
-# Real-Time Smart Occupancy & People Counting System
+This AI-powered full-stack system combines real-time Computer Vision with a cloud-connected web dashboard to automate occupancy tracking. Using YOLOv8 and OpenCV, it counts people entering and exiting a space, announces changes via voice alerts (pyttsx3), and visualizes the live and historical data on a responsive Next.js interface. Built with privacy in mind (no facial recognition), it addresses key operational challenges like safety compliance, space optimization, and analytics.
 
-## 1. Project Overview
+This project addresses inefficiencies in manual counting by automating real-time space tracking. Applications include:
 
-This AI-powered full-stack system combines real-time Computer Vision with a local web dashboard to automate occupancy tracking. Using **YOLOv8** and **OpenCV**, it counts people entering and exiting a space, announces changes via **voice alerts (pyttsx3)**, and visualizes the live and historical data on a responsive **React.js** interface. Built with privacy in mind (no facial recognition), it addresses key operational challenges like safety compliance, space optimization, and analytics for physical spaces.
+Retail & Malls: Track customer foot traffic and peak hours. 
 
----
+Event Venues: Monitor attendee count and crowd density for safety. 
 
-## 2. Problem Solved & Applications
+Schools & Universities: Count people in cafeterias, labs, or lecture halls for capacity. 
 
-This project addresses inefficiencies in manual counting by automating real-time space tracking. Key applications include:
+Smart Cities: Analyze general foot traffic patterns in public areas.
 
-- **Retail & Malls**: Track customer foot traffic and peak hours  
-- **Event Venues**: Monitor attendee count and crowd density for safety  
-- **Schools & Universities**: Count people in cafeterias, labs, or lecture halls for capacity  
-- **Smart Cities**: Analyze general foot traffic patterns in public areas  
-- **Offices & Co-working**: Monitor real-time room and area occupancy  
-- **Libraries & Study Rooms**: Identify busiest times and manage study space capacity  
-- **Fitness Centers**: Track gym and class occupancy for better member experience  
-- **Public Transport**: Monitor platform crowding for safety and operational insights  
+System Architecture
 
----
+Architecture Overview:
 
-## 3. System Architecture
-
-The system operates as a set of interconnected services running locally on a single machine for development and demonstration.
-
-**Architecture Overview**:  
-`Camera Input → YOLOv8 AI Module (Python) → Flask Bridge → Node.js API → MongoDB → React.js Frontend`
+Camera Input → YOLOv8 AI Module (Python) → Flask Bridge → Node.js API → MongoDB → Next.js Frontend
 
 
 
----
+Technologies Used
 
-## 4. Technologies Used
+AI: Python, YOLOv8, OpenCV, pyttsx3, FlaskBackend: Node.js, Express.js, Socket.IODatabase: MongoDB AtlasFrontend: React.js, Chart.js
 
-- **AI**: Python, YOLOv8, OpenCV, pyttsx3, Flask  
-- **Backend**: Node.js, Express.js, Socket.IO  
-- **Database**: MongoDB  
-- **Frontend**: React.js, Chart.js  
+Setup & Installation
 
----
-
-## 5. Setup & Installation
-
-### Folder Structure
+Structure:
 
 your-repo/
-├── frontend/ # React.js frontend application
-├── backend/ # Node.js + Express API
-├── ppython/ # Python AI (YOLOv8 + Flask)
+├── frontend/     # React.js frontend
+├── backend/      # Node.js + Express API
+├── ppython/      # Python AI (YOLOv8 + Flask)
 
-yaml
-Copy
-Edit
+Prerequisites
 
-### Prerequisites
+Python 3.8+, pip
 
-- Python 3.8+  
-- Node.js 16+  
-- Git  
-- MongoDB Community Server  
-- mongosh (MongoDB Shell)  
-- Webcam (for detection)
+Node.js 16+, npm or Yarn
 
----
+Git, MongoDB Atlas, Netlify, Render
 
-### Clone the Repository
+Webcam (for local detection)
 
-```bash
-git clone https://github.com/Jyoit/PersonCount.git
+Clone the Repository
+
+git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-MongoDB Local Setup
-Install MongoDB from the official site
 
-Start MongoDB:
+MongoDB Setup
 
-bash
-Copy
-Edit
-mongod --dbpath /path/to/your/data/directory
-MongoDB should now be running at mongodb://localhost:27017
+Create a free cluster in MongoDB Atlas
 
-Backend Setup
-bash
-Copy
-Edit
+Add database user and IP whitelist
+
+Copy your connection URI into .env or Render config as MONGO_URI
+
+Backend Setup 
+
 cd backend
 npm install
-Create a .env file in the backend/ folder:
 
-ini
-Copy
-Edit
-MONGO_URI=mongodb://localhost:27017/occupancy_db
-FRONTEND_URL=http://localhost:3000
-PORT=5001
-Frontend Setup
-bash
-Copy
-Edit
+Frontend Setup 
+
 cd ../frontend
 npm install
-Create a .env.local file in the frontend/ folder:
 
-ini
-Copy
-Edit
-NEXT_PUBLIC_API_URL=http://localhost:5001
-Python AI & Flask Setup
-bash
-Copy
-Edit
+Python AI Setup
+
 cd ../ppython
-pip install -r requirements.txt
-Update ppython/config.ini with:
+pip install -r requirements.txt  # Or install individually
 
-ini
-Copy
-Edit
-[API]
-url = http://localhost:5001/api/log
-6. Running the Project
-To run the system locally:
+Update ppython/config.ini with your backend API URL.
 
-1. Start MongoDB
-Ensure MongoDB is running with mongod.
+Running the Project
 
-2. Start Backend
-bash
-Copy
-Edit
-cd backend
-npm start
-3. Start Frontend
-bash
-Copy
-Edit
-cd ../frontend
-npm run dev
-4. Start Python Server
-bash
-Copy
-Edit
-cd ../ppython
-python server.py
-5. Trigger Detection from UI
-Open browser → http://localhost:3000
+To see the full system in action (all components running locally):
 
-Click the “Launch Detection” button
+Start MongoDB: Ensure your local MongoDB Community Server instance is running. (e.g., mongod command).
 
-This triggers countobjwithvoice.py through the local Flask bridge
+Start Node.js Backend:
 
-6. Observe
-OpenCV window shows live camera feed
+Open a new terminal/command prompt window.
 
-Voice alerts activate on entry/exit
+Navigate to the backend/ directory.
 
-Dashboard updates occupancy count in real-time
+Run: npm start (or node server.js if your package.json doesn't define a start script).
 
-MongoDB logs historical occupancy data
+You should see messages indicating the backend is listening, e.g., on http://localhost:5001.
 
-7. Challenges & Learnings
-AI Accuracy & False Positives: Tuned YOLO confidence threshold
+Start Next.js Frontend:
 
-Real-time Cross-Language Communication: Python ↔ Flask ↔ Node.js ↔ React
+Open another new terminal/command prompt window.
 
-Managing Multiple Services Locally: Coordination across frontend/backend/AI
+Navigate to the frontend/ directory.
 
-Distributed Debugging: Tracking issues across multiple components
+Run: npm run dev
 
-8. Future Enhancements
-Cloud Deployment for online access
+This will typically start the frontend development server on http://localhost:3000.
 
-Capacity Alerts
+Start Local Python Server & AI:
 
-Multi-Camera Support
+Open a third new terminal/command prompt window.
 
-Advanced Analytics with Heatmaps
+Navigate to the ppython/ directory.
 
-Secure User Logins
+Run the Flask local server: python server.py
 
-Dockerization for unified setup
+This server will now be listening for commands, and it will eventually launch the AI.
+
+Access the Dashboard & Trigger AI:
+
+Open your web browser and go to http://localhost:3000.
+
+On the dashboard, you should find a button (e.g., "Launch Detection"). Click this button. This sends a command to your local Python Flask server, which then starts the countobjwithvoice.py script.
+
+Observe:
+
+You should see a new OpenCV window pop up on your local machine, showing the live camera feed with detections.
+
+You should hear voice alerts when people enter/exit (if audio is enabled).
+
+Your web dashboard in the browser (http://localhost:3000) should now show the live occupancy count updating in real-time and historical data being logged to your local MongoDB instance.
+
+Challenges & Learnings
+
+Real-time Cross-Language Communication
+
+Managing Multiple Services Locally
+
+Distributed System Debugging
+
+Future Enhancements
+
+Add alerts for maximum room occupancy.
+
+Integrate more cameras for larger areas.
+
+Provide deeper historical data insights like heatmaps.
+
+Add secure logins for dashboard access.
+
+Package components with Docker for easier setup and portability.
+
