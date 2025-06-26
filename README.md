@@ -10,7 +10,7 @@ Schools & Universities: Count people in cafeterias, labs, or lecture halls for c
 
 Smart Cities: Analyze general foot traffic patterns in public areas.
 
-System Architecture
+## System Architecture
 
 Architecture Overview:
 
@@ -18,20 +18,14 @@ Camera Input → YOLOv8 AI Module (Python) → Flask Bridge → Node.js API → 
 
 
 
-Technologies Used
+## Technologies Used
 
 AI: Python, YOLOv8, OpenCV, pyttsx3, FlaskBackend: Node.js, Express.js, Socket.IODatabase: MongoDB AtlasFrontend: React.js, Chart.js
 
-Setup & Installation
+## Setup & Installation
+     
 
-Structure:
-
-your-repo/
-├── frontend/     # React.js frontend
-├── backend/      # Node.js + Express API
-├── ppython/      # Python AI (YOLOv8 + Flask)
-
-Prerequisites
+** Prerequisites
 
 Python 3.8+, pip
 
