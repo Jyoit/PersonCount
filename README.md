@@ -25,7 +25,7 @@ AI: Python, YOLOv8, OpenCV, pyttsx3, FlaskBackend: Node.js, Express.js, Socket.I
 ## Setup & Installation
      
 
-# Prerequisites
+### Prerequisites
 
 Python 3.8+, pip
 
@@ -35,12 +35,12 @@ Git, MongoDB Atlas, Netlify, Render
 
 Webcam (for local detection)
 
-# Clone the Repository
+### Clone the Repository
 
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
-# MongoDB Setup
+### MongoDB Setup
 
 Create a free cluster in MongoDB Atlas
 
@@ -48,24 +48,24 @@ Add database user and IP whitelist
 
 Copy your connection URI into .env or Render config as MONGO_URI
 
-# Backend Setup 
+### Backend Setup 
 
 cd backend
 npm install
 
-# Frontend Setup 
+### Frontend Setup 
 
 cd ../frontend
 npm install
 
-# Python AI Setup
+### Python AI Setup
 
 cd ../ppython
 pip install -r requirements.txt  # Or install individually
 
 Update ppython/config.ini with your backend API URL.
 
-# Running the Project
+### Running the Project
 
 To see the full system in action (all components running locally):
 
@@ -107,7 +107,7 @@ Open your web browser and go to http://localhost:3000.
 
 On the dashboard, you should find a button (e.g., "Launch Detection"). Click this button. This sends a command to your local Python Flask server, which then starts the countobjwithvoice.py script.
 
-# Observe:
+### Observe:
 
 You should see a new OpenCV window pop up on your local machine, showing the live camera feed with detections.
 
