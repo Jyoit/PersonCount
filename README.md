@@ -25,7 +25,7 @@ AI: Python, YOLOv8, OpenCV, pyttsx3, FlaskBackend: Node.js, Express.js, Socket.I
 ## Setup & Installation
      
 
-** Prerequisites
+** Prerequisites**
 
 Python 3.8+, pip
 
