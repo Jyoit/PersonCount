@@ -31,13 +31,13 @@ Python 3.8+, pip
 
 Node.js 16+, npm or Yarn
 
-Git, MongoDB Atlas, Netlify, Render
+Git, MongoDB Atlas
 
 Webcam (for local detection)
 
 ### Clone the Repository
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Jyoit/PersonCount
 cd your-repo-name
 
 ### MongoDB Setup
